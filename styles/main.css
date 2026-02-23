@@ -165,6 +165,10 @@ footer a
     opacity: 0;
     animation: animationFooter 2s forwards;
 }
+footer span
+{
+    display: inline;
+}
 @keyframes animationFooter {
   to {
     opacity: 1;

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <a id="name-text" href="">Szymon<a>
     <div class="nav-menu">
       <ul>
-        <li><a href="#">O mnie</a></li>
+        <li><a href="#about-me">O mnie</a></li>
         <li><a href="#">Umiejętności</a></li>
         <li><a href="#">Projekty</a></li>
       </ul>
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const expandedMenu = document.getElementById('expanded-menu');
   expandedMenu.innerHTML = `
     <div id="expanded-menu-content">
-      <a href="#">O mnie</a>
+      <a href="#about-me">O mnie</a>
       <a href="#">Umiejętności</a>
-      <a href="3">Projekty</a>
+      <a href="#">Projekty</a>
     </div>
   `;
 
@@ -30,5 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
       expandedMenu.classList.remove('show');
     }
   });
-
 });
+
+document.getElementById('year').innerHTML = new Date().getFullYear();
