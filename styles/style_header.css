@@ -13,11 +13,10 @@ header
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
     opacity: 0;
     transform: translateY(15px); 
     animation: animationIntroduction ease-out 2s forwards;
+    padding: 20px;
 }
 @keyframes animationIntroduction {
   to {
@@ -94,21 +93,4 @@ a
     transform: scale(1.1);
     color: var(--main-color);
     border: 2px solid var(--main-color);
-}
-main
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-article
-{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
 }

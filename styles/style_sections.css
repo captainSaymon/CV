@@ -1,21 +1,22 @@
-main
+section#about-me
 {
     display: flex;
+    justify-content: center;
 }
-section#about-me
+section#about-me div
 {
     width: 100vh;
     opacity: 0;
     transform: translateY(40px); 
-    animation: animationAboutme ease-out 0.8s forwards;
+    animation: animationStart ease-out 0.8s forwards;
 }
-@keyframes animationAboutme {
+@keyframes animationStart {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-section#about-me h1
+section h1
 {
     color: var(--text-color);
     font-size: 40px;
@@ -28,6 +29,80 @@ section#about-me p
     font-size: 20px;
     font-family: var(--font-content);
     color: var(--description-color);
+    text-align: justify;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+section#skills
+{
+    display: flex;
+    justify-content: center;
+    max-height: 100vh;
+    background-color: #00354e;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: animationStart ease-out 0.8s forwards;
+}
+section#skills h1
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+section#skills article
+{
+    flex-direction: column;
+}
+section .cards
+{
+    display: flex;
+    max-width: 100vh;
+}
+section .cards .card
+{
+    padding: 20px;
+    display: flex;          
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
+    min-height: 60vh;
+    max-height: 100vh;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 2s forwards;
+}
+.card.fade-out
+{
+    opacity: 0;
+    animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.card.fade-in
+{
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+section .cards .card h3
+{
+    color: var(--text-color);
+    font-family: var(--font-title);
+    font-size: 25px;
+    text-align: center;
+}
+section .cards .card p
+{
+    color: var(--description-color);
+    font-family: var(--font-content);
+    font-size: 20px;
     text-align: justify;
     line-height: 1.6;
 }
