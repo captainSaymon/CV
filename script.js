@@ -1,3 +1,9 @@
+// uruchomienie kart
+createCards();
+createProjectCards()
+
+
+// menu
 document.addEventListener('DOMContentLoaded', function () {
   const nav = document.querySelector('nav');
   nav.innerHTML = `
@@ -32,23 +38,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+// rok w stopce
 document.getElementById('year').innerHTML = new Date().getFullYear();
 
 
-
-let titles = ['Języki', 'Git', 'Nauka']
-let description = [
+// karty
+let titlesCard = ['Języki', 'Git', 'Nauka']
+let descriptionCard = [
   'Najwięcej projektów realizowałem w Pythonie i C++, a także tworzyłem aplikacje mobilne w Javie i React Native. W ramach laboratoriów zaprojektowałem aplikację webową w TypeScript, która komunikowała się z zdalnym serwerem.',
   'Od początku studiów pracuję z systemem kontroli wersji Git. Większość swoich projektów tworzę i rozwijam na platformie GitHub. Znam zarówno podstawowe, jak i bardziej zaawansowane funkcje tego narzędzia.',
   'Ukończyłem IV Liceum Ogólnokształcące w Tarnowie, zdając maturę z matematyki rozszerzonej oraz informatyki. Obecnie studiuję na Akademii Tarnowskiej. Znam język angielski na poziomie B2 i aktywnie rozwijam swoje umiejętności również w trybie samodzielnym w domu.'
 ]
 
-let index = 0;
-const el = document.querySelector('.cards');
+let indexCard = 0;
+const cardContainer = document.querySelector('.cards');
 
 function changeCard() 
 {
-  const oldCard = el.querySelector('.card');
+  const oldCard = cardContainer.querySelector('.card');
 
   if (oldCard)
   {
@@ -69,13 +77,36 @@ function createNewCard()
 {
   const card = document.createElement('article');
   card.classList.add('card', 'fade-in');
-  card.innerHTML = `<h3>${titles[index]}</h3><p>${description[index]}</p>`;
-  el.appendChild(card);
+  card.innerHTML = `<h3>${titlesCard[indexCard]}</h3><p>${descriptionCard[indexCard]}</p>`;
+  cardContainer.appendChild(card);
   setTimeout(() => card.classList.remove('fade-in'), 1000);
 
-  index = (index + 1) % titles.length;
+  indexCard = (indexCard + 1) % titlesCard.length;
 }
 
-changeCard();
-setInterval(changeCard, 10000)
+function createCards()
+{
+  changeCard();
+  setInterval(changeCard, 10000)
+}
 
+// projekty
+let titlesProject = ['App Blog', 'Server', 'Kwadrat Logiczny']
+let descriptionProject = [
+  'Stworzona przy użyciu Angular CLI aplikacja blogowa umożliwia dodawanie, przeglądanie postów oraz rejestrację użytkowników.',
+  'Zawiera dane postów i użytkowników oraz obsługuje zapytania HTTP: POST, PUT, GET i DELETE.',
+  'Program wspomaga analizę logiczną poprzez generowanie zdań dla brakujących wierzchołków kwadratu logicznego. Stosowane są różne techniki promptowania do pracy z dużymi modelami językowymi (LLM).'
+]
+
+const elementContainer = document.querySelector('.projects');
+
+function createProjectCards()
+{
+  for (let i = 0; i < titlesProject.length; i++)
+  {
+    const card = document.createElement('article');
+    card.classList.add('project-card');
+    card.innerHTML = `<h3>${titlesProject[i]}</h3><p>${descriptionProject[i]}</p>`;
+    elementContainer.append(card);
+  }
+}
