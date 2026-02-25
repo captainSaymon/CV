@@ -13,6 +13,7 @@ section#about-me
     background-color: var(--second-color);
     display: flex;
     justify-content: center;
+    position: relative;
 }
 section#about-me div
 {

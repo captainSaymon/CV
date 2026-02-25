@@ -2,6 +2,7 @@
 {
     --background-color: var(--gradient-color);
     --nav-color: #18535f;
+    --shadow-color: #1a8ea5;
     --main-color: #CDFCF6;
     --second-color: #086170;
     --gradient-color: linear-gradient(#18535f 45%, #153B42);
