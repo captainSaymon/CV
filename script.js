@@ -85,6 +85,7 @@ function createCards()
   setInterval(changeCard, 10000)
 }
 
+
 // projekty
 const url = 'https://github.com/captainSaymon/'
 let projectNameURL = ['app-blog', 'app-blog-server', 'Kwadrat-Logiczny']
@@ -99,18 +100,33 @@ const elementContainer = document.querySelector('.projects');
 
 function createProjectCards()
 {
-for (let i = 0; i < titlesProject.length; i++) {
-    const link = document.createElement('a');
-    link.href = url + projectNameURL[i];
-    link.style.textDecoration = 'none';
+  for (let i = 0; i < titlesProject.length; i++) {
+      const link = document.createElement('a');
+      link.href = url + projectNameURL[i];
+      link.style.textDecoration = 'none';
 
-    const card = document.createElement('article');
-    card.classList.add('project-card');
-    card.innerHTML = `<h3>${titlesProject[i]}</h3><p>${descriptionProject[i]}</p>`;
-    link.appendChild(card);
-    elementContainer.appendChild(link);
+      const card = document.createElement('article');
+      card.classList.add('project-card');
+      card.innerHTML = `<h3>${titlesProject[i]}</h3><p>${descriptionProject[i]}</p>`;
+      link.appendChild(card);
+      elementContainer.appendChild(link);
+  }
 }
-}
+
+
+// pobranie pliku pdf
+const button = document.getElementById('downloadCV');
+
+button.addEventListener('click', () => {
+  const filePath = 'files/CV.pdf';
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = 'CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
 
 // uruchomienie kart
 createCards();

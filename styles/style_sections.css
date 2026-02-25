@@ -131,6 +131,9 @@ section#my-projects
     flex-direction: column;
     padding: 1vh;
     gap: 5vh;
+    opacity: 0;
+    transform: translateY(40px); 
+    animation: animationStart ease-out 0.8s forwards;
 }
 section#my-projects section
 {

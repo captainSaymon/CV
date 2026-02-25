@@ -59,6 +59,13 @@ header
     text-align: justify;
     line-height: 1.6;
 }
+.btn-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
 .btn-contact-div
 {
     display: flex;
