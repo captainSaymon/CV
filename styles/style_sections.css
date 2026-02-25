@@ -29,7 +29,7 @@ section#about-me p
     color: var(--description-color);
     text-align: justify;
     line-height: 1.6;
-    padding: 20px;
+    padding: var(--main-pading);
 }
 
 /* Animacja */
@@ -71,7 +71,7 @@ section .cards
 }
 section .cards .card
 {
-    padding: 20px;
+    padding: var(--main-pading);
     display: flex;          
     flex-direction: column;  
     justify-content: center; 
@@ -129,7 +129,7 @@ section#my-projects
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1vh;
+    padding: var(--main-pading);
     gap: 5vh;
     opacity: 0;
     transform: translateY(40px); 
@@ -149,7 +149,7 @@ section#my-projects section .project-card
     border-radius: 3vh;
     display: flex;
     flex-direction: column;
-    padding: 4vh;
+    padding: 2vh;
     justify-content: flex-start;
     max-width: 47vh;
     height: 100%;
