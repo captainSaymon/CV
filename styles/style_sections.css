@@ -39,7 +39,7 @@ section#skills
     display: flex;
     justify-content: center;
     max-height: 100vh;
-    background-color: #00354e;
+    background-color: var(--second-color);
     opacity: 0;
     transform: translateY(40px);
     animation: animationStart ease-out 0.8s forwards;

@@ -1,7 +1,10 @@
 :root
 {
-    --background-color: #19223b;
+    --background-color: var(--gradient-color);
+    --nav-color: #18535f;
     --main-color: #CDFCF6;
+    --second-color: #073f49;
+    --gradient-color: linear-gradient(#18535f 45%, #153B42);
     --text-color: #CBDCEB;
     --description-color: #89A8B2;
     --hover-color: var(--main-color);
@@ -36,6 +39,7 @@ body
     background-size: 100% 100%;
     background-attachment: fixed;
     margin: 0;
+    background-attachment: scroll;
 }
 
 /*Menu*/
@@ -45,7 +49,7 @@ nav
     display: flex;
     align-items: center;
     padding: 0 40px;
-    background-color: var(--background-color);
+    background-color: var(--nav-color);
     font-family: var(--font-content);
     position: absolute;
     width: auto;
