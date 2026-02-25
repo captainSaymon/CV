@@ -1,5 +1,16 @@
+h1
+{
+    color: var(--text-color);
+    font-size: 40px;
+    font-family: var(--font-title);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* O mnie */
 section#about-me
 {
+    background-color: var(--second-color);
     display: flex;
     justify-content: center;
 }
@@ -9,20 +20,6 @@ section#about-me div
     opacity: 0;
     transform: translateY(40px); 
     animation: animationStart ease-out 0.8s forwards;
-}
-@keyframes animationStart {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-section h1
-{
-    color: var(--text-color);
-    font-size: 40px;
-    font-family: var(--font-title);
-    font-weight: bold;
-    text-align: center;
 }
 section#about-me p
 {
@@ -34,12 +31,23 @@ section#about-me p
     padding: 20px;
 }
 
+/* Animacja */
+@keyframes animationStart
+{
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Umiejętności */
 section#skills
 {
     display: flex;
     justify-content: center;
     max-height: 100vh;
-    background-color: var(--second-color);
     opacity: 0;
     transform: translateY(40px);
     animation: animationStart ease-out 0.8s forwards;
@@ -78,18 +86,10 @@ section .cards .card
     opacity: 0;
     animation: fadeOut 1s forwards;
 }
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
 .card.fade-in
 {
     opacity: 1;
     animation: fadeIn 1s forwards;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 section .cards .card h3
 {
@@ -105,4 +105,67 @@ section .cards .card p
     font-size: 20px;
     text-align: justify;
     line-height: 1.6;
+}
+
+/* Animacje */
+@keyframes fadeOut
+{
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes fadeIn
+{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+/* Projekty */
+section#my-projects
+{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vh;
+    gap: 5vh;
+}
+section#my-projects section
+{
+    align-items: stretch;
+    width: 150vh;
+    display: flex;
+    gap: 1vh;
+    justify-content: center;
+}
+section#my-projects section .project-card
+{
+    background-color: var(--second-color);
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: column;
+    padding: 4vh;
+    justify-content: flex-start;
+    width: 47vh;
+    height: 100%;
+}
+section#my-projects section .project-card p
+{
+    color: var(--description-color);
+    font-family: var(--font-content);
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.6;
+}
+section#my-projects section .project-card h3
+{
+    color: var(--text-color);
+    font-family: var(--font-title);
+    font-size: 23px;
+}
+section#my-projects section .project-card:hover
+{
+    background-color: var(--hover-card-color);
 }

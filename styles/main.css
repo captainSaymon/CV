@@ -3,11 +3,12 @@
     --background-color: var(--gradient-color);
     --nav-color: #18535f;
     --main-color: #CDFCF6;
-    --second-color: #073f49;
+    --second-color: #086170;
     --gradient-color: linear-gradient(#18535f 45%, #153B42);
     --text-color: #CBDCEB;
     --description-color: #89A8B2;
     --hover-color: var(--main-color);
+    --hover-card-color: #008299;
 
     --phone-text-title: 46px;
     --phone-text-subtitle: 20px;

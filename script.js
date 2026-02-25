@@ -1,8 +1,3 @@
-// uruchomienie kart
-createCards();
-createProjectCards()
-
-
 // menu
 document.addEventListener('DOMContentLoaded', function () {
   const nav = document.querySelector('nav');
@@ -12,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <ul>
         <li><a href="#about-me">O mnie</a></li>
         <li><a href="#skills">Umiejętności</a></li>
-        <li><a href="#">Projekty</a></li>
+        <li><a href="#my-projects">Projekty</a></li>
       </ul>
     </div>
   `;
@@ -22,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div id="expanded-menu-content">
       <a href="#about-me">O mnie</a>
       <a href="#skills">Umiejętności</a>
-      <a href="#">Projekty</a>
+      <a href="#my-projects">Projekty</a>
     </div>
   `;
 
@@ -91,6 +86,8 @@ function createCards()
 }
 
 // projekty
+const url = 'https://github.com/captainSaymon/'
+let projectNameURL = ['app-blog', 'app-blog-server', 'Kwadrat-Logiczny']
 let titlesProject = ['App Blog', 'Server', 'Kwadrat Logiczny']
 let descriptionProject = [
   'Stworzona przy użyciu Angular CLI aplikacja blogowa umożliwia dodawanie, przeglądanie postów oraz rejestrację użytkowników.',
@@ -102,11 +99,19 @@ const elementContainer = document.querySelector('.projects');
 
 function createProjectCards()
 {
-  for (let i = 0; i < titlesProject.length; i++)
-  {
+for (let i = 0; i < titlesProject.length; i++) {
+    const link = document.createElement('a');
+    link.href = url + projectNameURL[i];
+    link.style.textDecoration = 'none';
+
     const card = document.createElement('article');
     card.classList.add('project-card');
     card.innerHTML = `<h3>${titlesProject[i]}</h3><p>${descriptionProject[i]}</p>`;
-    elementContainer.append(card);
-  }
+    link.appendChild(card);
+    elementContainer.appendChild(link);
 }
+}
+
+// uruchomienie kart
+createCards();
+createProjectCards();
