@@ -12,25 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   `;
 
-  const expandedMenu = document.getElementById('expanded-menu');
-  expandedMenu.innerHTML = `
-    <div id="expanded-menu-content">
-      <a href="#about-me">O mnie</a>
-      <a href="#skills">Umiejętności</a>
-      <a href="#my-projects">Projekty</a>
-    </div>
-  `;
-
   const menuIcon = document.getElementById('menu-icon');
   menuIcon.addEventListener('click', () => {
     expandedMenu.classList.toggle('show');
   });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && expandedMenu.classList.contains('show')) {
-      expandedMenu.classList.remove('show');
-    }
-  });
 });
 
 
@@ -72,7 +58,7 @@ function createNewCard()
 {
   const card = document.createElement('article');
   card.classList.add('card', 'fade-in');
-  card.innerHTML = `<h3>${titlesCard[indexCard]}</h3><p>${descriptionCard[indexCard]}</p>`;
+  card.innerHTML = `<h1>${titlesCard[indexCard]}</h1><p>${descriptionCard[indexCard]}</p>`;
   cardContainer.appendChild(card);
   setTimeout(() => card.classList.remove('fade-in'), 1000);
 
